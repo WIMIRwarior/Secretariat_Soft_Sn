@@ -30,8 +30,12 @@ namespace Secretariat_Soft
 
             //Start the digital clock
             StartClockAsync();
-            
+
             //-------------------------------------------------------
+
+            //Hide the TreeView panel
+            Tree_Panel.Visible = false;
+            //------------------------------
 
         }
 
@@ -86,5 +90,26 @@ namespace Secretariat_Soft
             this.WindowState = FormWindowState.Minimized;
         }
 
+        private void Data_Entry_Button_Click(object sender, EventArgs e)
+        {
+            if (Tree_Panel.Visible)
+            {
+                Tree_Panel.Visible = false;
+            }
+            else
+            {
+                Tree_Panel.Visible = true;
+            }
+        }
+
+        private void Collapse_Button_Click(object sender, EventArgs e)
+        {
+            Main_TreeView.CollapseAll();
+        }
+
+        private void Expand_Button_Click(object sender, EventArgs e)
+        {
+            Main_TreeView.ExpandAll();
+        }
     }
 }
