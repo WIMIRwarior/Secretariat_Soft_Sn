@@ -103,6 +103,26 @@ namespace Secretariat_Soft.Properties {
         /// <summary>
         ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap butt_print_32 {
+            get {
+                object obj = ResourceManager.GetObject("butt_print_32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap butt_search2_32 {
+            get {
+                object obj = ResourceManager.GetObject("butt_search2_32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap calc_butt {
             get {
                 object obj = ResourceManager.GetObject("calc_butt", resourceCulture);
@@ -176,6 +196,46 @@ namespace Secretariat_Soft.Properties {
         internal static System.Drawing.Bitmap min_butt {
             get {
                 object obj = ResourceManager.GetObject("min_butt", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap nav_first {
+            get {
+                object obj = ResourceManager.GetObject("nav.first", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap nav_last {
+            get {
+                object obj = ResourceManager.GetObject("nav.last", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap nav_next {
+            get {
+                object obj = ResourceManager.GetObject("nav.next", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap nav_previous {
+            get {
+                object obj = ResourceManager.GetObject("nav.previous", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

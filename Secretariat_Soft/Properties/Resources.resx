@@ -130,6 +130,12 @@
   <data name="butt_background" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Sources\Images\butt_background.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="butt_print_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Sources\Images\butt_print_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="butt_search2_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Sources\Images\butt_search2_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="calc_butt" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Sources\Images\calc_butt.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -153,6 +159,18 @@
   </data>
   <data name="min_butt" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Sources\Images\min_butt.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="nav.first" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Sources\Images\nav.first.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="nav.last" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Sources\Images\nav.last.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="nav.next" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Sources\Images\nav.next.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="nav.previous" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Sources\Images\nav.previous.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="RadMenuItem2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Sources\Images\RadMenuItem2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
