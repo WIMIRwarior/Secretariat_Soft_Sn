@@ -183,6 +183,16 @@ namespace Secretariat_Soft.Properties {
         /// <summary>
         ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap down_icon {
+            get {
+                object obj = ResourceManager.GetObject("down_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap kToolStripButton2_Image {
             get {
                 object obj = ResourceManager.GetObject("kToolStripButton2.Image", resourceCulture);

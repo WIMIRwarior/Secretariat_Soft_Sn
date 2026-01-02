@@ -29,9 +29,16 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
             Top_toolStrip = new ToolStrip();
+            AddEditDoc_Button = new ToolStripButton();
+            toolStripSeparator2 = new ToolStripSeparator();
+            toolStripSeparator1 = new ToolStripSeparator();
+            Print_Button = new ToolStripButton();
+            toolStripSeparator4 = new ToolStripSeparator();
+            Search_Button = new ToolStripButton();
+            toolStripSeparator3 = new ToolStripSeparator();
             Bottom_toolStrip = new ToolStrip();
             First_Button = new ToolStripButton();
             Previous_Button = new ToolStripButton();
@@ -63,18 +70,25 @@
             Incoming_Letters_bindingSource = new BindingSource(components);
             letters1 = new Secretariat_Soft.DataSet.Letters();
             incoming_LettersTableAdapter1 = new Secretariat_Soft.DataSet.LettersTableAdapters.Incoming_LettersTableAdapter();
-            Print_Button = new ToolStripButton();
-            AddEditDoc_Button = new ToolStripButton();
-            Search_Button = new ToolStripButton();
-            toolStripSeparator1 = new ToolStripSeparator();
-            toolStripSeparator2 = new ToolStripSeparator();
-            toolStripSeparator3 = new ToolStripSeparator();
-            toolStripSeparator4 = new ToolStripSeparator();
+            Search_panel2 = new Panel();
+            SearchDateFrom_dateTimePicker = new DateTimePicker();
+            Search_RegDate_button = new Button();
+            Search_RegDateFrom_label = new Label();
+            Search_Subject_Button = new Button();
+            SearchSubject_label = new Label();
+            Search_Subject_TextBox = new TextBox();
+            SearchID_Button = new Button();
+            ID_Label = new Label();
+            SearchID_textBox = new TextBox();
+            Search_panel1 = new Panel();
+            SearchDateTo_dateTimePicker = new DateTimePicker();
+            Search_RegDateTo_label = new Label();
             Top_toolStrip.SuspendLayout();
             Bottom_toolStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)Incoming_Letters_bindingSource).BeginInit();
             ((System.ComponentModel.ISupportInitialize)letters1).BeginInit();
+            Search_panel2.SuspendLayout();
             SuspendLayout();
             // 
             // Top_toolStrip
@@ -86,6 +100,71 @@
             Top_toolStrip.Size = new Size(1026, 54);
             Top_toolStrip.TabIndex = 0;
             Top_toolStrip.Text = "toolStrip1";
+            // 
+            // AddEditDoc_Button
+            // 
+            AddEditDoc_Button.BackgroundImage = Properties.Resources.butt_background;
+            AddEditDoc_Button.BackgroundImageLayout = ImageLayout.Stretch;
+            AddEditDoc_Button.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 238);
+            AddEditDoc_Button.Image = Properties.Resources.top_input_butt;
+            AddEditDoc_Button.ImageScaling = ToolStripItemImageScaling.None;
+            AddEditDoc_Button.ImageTransparentColor = Color.Magenta;
+            AddEditDoc_Button.Name = "AddEditDoc_Button";
+            AddEditDoc_Button.Size = new Size(140, 51);
+            AddEditDoc_Button.Text = "Add | Edit document F2";
+            AddEditDoc_Button.TextImageRelation = TextImageRelation.ImageAboveText;
+            // 
+            // toolStripSeparator2
+            // 
+            toolStripSeparator2.Name = "toolStripSeparator2";
+            toolStripSeparator2.Size = new Size(6, 54);
+            // 
+            // toolStripSeparator1
+            // 
+            toolStripSeparator1.Alignment = ToolStripItemAlignment.Right;
+            toolStripSeparator1.Name = "toolStripSeparator1";
+            toolStripSeparator1.Size = new Size(6, 54);
+            // 
+            // Print_Button
+            // 
+            Print_Button.Alignment = ToolStripItemAlignment.Right;
+            Print_Button.BackgroundImage = Properties.Resources.butt_background;
+            Print_Button.BackgroundImageLayout = ImageLayout.Stretch;
+            Print_Button.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 238);
+            Print_Button.Image = Properties.Resources.butt_print_32;
+            Print_Button.ImageScaling = ToolStripItemImageScaling.None;
+            Print_Button.ImageTransparentColor = Color.Magenta;
+            Print_Button.Name = "Print_Button";
+            Print_Button.Size = new Size(54, 51);
+            Print_Button.Text = "Print F4";
+            Print_Button.TextImageRelation = TextImageRelation.ImageAboveText;
+            // 
+            // toolStripSeparator4
+            // 
+            toolStripSeparator4.Alignment = ToolStripItemAlignment.Right;
+            toolStripSeparator4.Name = "toolStripSeparator4";
+            toolStripSeparator4.Size = new Size(6, 54);
+            // 
+            // Search_Button
+            // 
+            Search_Button.Alignment = ToolStripItemAlignment.Right;
+            Search_Button.BackgroundImage = Properties.Resources.butt_background;
+            Search_Button.BackgroundImageLayout = ImageLayout.Stretch;
+            Search_Button.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 238);
+            Search_Button.Image = Properties.Resources.butt_search2_32;
+            Search_Button.ImageScaling = ToolStripItemImageScaling.None;
+            Search_Button.ImageTransparentColor = Color.Magenta;
+            Search_Button.Name = "Search_Button";
+            Search_Button.Size = new Size(65, 51);
+            Search_Button.Text = "Search F3";
+            Search_Button.TextImageRelation = TextImageRelation.ImageAboveText;
+            Search_Button.Click += Search_Button_Click;
+            // 
+            // toolStripSeparator3
+            // 
+            toolStripSeparator3.Alignment = ToolStripItemAlignment.Right;
+            toolStripSeparator3.Name = "toolStripSeparator3";
+            toolStripSeparator3.Size = new Size(6, 54);
             // 
             // Bottom_toolStrip
             // 
@@ -165,8 +244,8 @@
             dataGridView1.AllowUserToAddRows = false;
             dataGridView1.AllowUserToDeleteRows = false;
             dataGridView1.AllowUserToOrderColumns = true;
-            dataGridViewCellStyle7.BackColor = Color.DeepSkyBlue;
-            dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle3.BackColor = Color.DeepSkyBlue;
+            dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
             dataGridView1.AutoGenerateColumns = false;
             dataGridView1.BackgroundColor = Color.SkyBlue;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -176,9 +255,9 @@
             dataGridView1.Name = "dataGridView1";
             dataGridView1.ReadOnly = true;
             dataGridView1.RowHeadersWidth = 25;
-            dataGridViewCellStyle8.BackColor = Color.FromArgb(255, 255, 192);
-            dataGridViewCellStyle8.ForeColor = Color.Black;
-            dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle4.BackColor = Color.FromArgb(255, 255, 192);
+            dataGridViewCellStyle4.ForeColor = Color.Black;
+            dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle4;
             dataGridView1.Size = new Size(1002, 479);
             dataGridView1.TabIndex = 2;
             // 
@@ -340,69 +419,157 @@
             // 
             incoming_LettersTableAdapter1.ClearBeforeFill = true;
             // 
-            // Print_Button
+            // Search_panel2
             // 
-            Print_Button.Alignment = ToolStripItemAlignment.Right;
-            Print_Button.BackgroundImage = Properties.Resources.butt_background;
-            Print_Button.BackgroundImageLayout = ImageLayout.Stretch;
-            Print_Button.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 238);
-            Print_Button.Image = Properties.Resources.butt_print_32;
-            Print_Button.ImageScaling = ToolStripItemImageScaling.None;
-            Print_Button.ImageTransparentColor = Color.Magenta;
-            Print_Button.Name = "Print_Button";
-            Print_Button.Size = new Size(54, 51);
-            Print_Button.Text = "Print F4";
-            Print_Button.TextImageRelation = TextImageRelation.ImageAboveText;
+            Search_panel2.BorderStyle = BorderStyle.FixedSingle;
+            Search_panel2.Controls.Add(SearchDateTo_dateTimePicker);
+            Search_panel2.Controls.Add(Search_RegDateTo_label);
+            Search_panel2.Controls.Add(SearchDateFrom_dateTimePicker);
+            Search_panel2.Controls.Add(Search_RegDate_button);
+            Search_panel2.Controls.Add(Search_RegDateFrom_label);
+            Search_panel2.Controls.Add(Search_Subject_Button);
+            Search_panel2.Controls.Add(SearchSubject_label);
+            Search_panel2.Controls.Add(Search_Subject_TextBox);
+            Search_panel2.Controls.Add(SearchID_Button);
+            Search_panel2.Controls.Add(ID_Label);
+            Search_panel2.Controls.Add(SearchID_textBox);
+            Search_panel2.Location = new Point(611, 88);
+            Search_panel2.Name = "Search_panel2";
+            Search_panel2.Size = new Size(354, 325);
+            Search_panel2.TabIndex = 3;
+            Search_panel2.Visible = false;
+            Search_panel2.Paint += Search_panel2_Paint;
             // 
-            // AddEditDoc_Button
+            // SearchDateFrom_dateTimePicker
             // 
-            AddEditDoc_Button.BackgroundImage = Properties.Resources.butt_background;
-            AddEditDoc_Button.BackgroundImageLayout = ImageLayout.Stretch;
-            AddEditDoc_Button.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 238);
-            AddEditDoc_Button.Image = Properties.Resources.top_input_butt;
-            AddEditDoc_Button.ImageScaling = ToolStripItemImageScaling.None;
-            AddEditDoc_Button.ImageTransparentColor = Color.Magenta;
-            AddEditDoc_Button.Name = "AddEditDoc_Button";
-            AddEditDoc_Button.Size = new Size(140, 51);
-            AddEditDoc_Button.Text = "Add | Edit document F2";
-            AddEditDoc_Button.TextImageRelation = TextImageRelation.ImageAboveText;
+            SearchDateFrom_dateTimePicker.Format = DateTimePickerFormat.Short;
+            SearchDateFrom_dateTimePicker.Location = new Point(95, 124);
+            SearchDateFrom_dateTimePicker.Name = "SearchDateFrom_dateTimePicker";
+            SearchDateFrom_dateTimePicker.Size = new Size(145, 23);
+            SearchDateFrom_dateTimePicker.TabIndex = 16;
             // 
-            // Search_Button
+            // Search_RegDate_button
             // 
-            Search_Button.Alignment = ToolStripItemAlignment.Right;
-            Search_Button.BackgroundImage = Properties.Resources.butt_background;
-            Search_Button.BackgroundImageLayout = ImageLayout.Stretch;
-            Search_Button.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 238);
-            Search_Button.Image = Properties.Resources.butt_search2_32;
-            Search_Button.ImageScaling = ToolStripItemImageScaling.None;
-            Search_Button.ImageTransparentColor = Color.Magenta;
-            Search_Button.Name = "Search_Button";
-            Search_Button.Size = new Size(65, 51);
-            Search_Button.Text = "Search F3";
-            Search_Button.TextImageRelation = TextImageRelation.ImageAboveText;
+            Search_RegDate_button.BackgroundImage = Properties.Resources.butt_background;
+            Search_RegDate_button.BackgroundImageLayout = ImageLayout.Stretch;
+            Search_RegDate_button.Cursor = Cursors.Hand;
+            Search_RegDate_button.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            Search_RegDate_button.ForeColor = Color.Black;
+            Search_RegDate_button.Image = Properties.Resources.butt_search2_32;
+            Search_RegDate_button.Location = new Point(246, 126);
+            Search_RegDate_button.Name = "Search_RegDate_button";
+            Search_RegDate_button.Size = new Size(103, 48);
+            Search_RegDate_button.TabIndex = 15;
+            Search_RegDate_button.Text = "Search";
+            Search_RegDate_button.TextImageRelation = TextImageRelation.ImageBeforeText;
+            Search_RegDate_button.UseVisualStyleBackColor = true;
+            Search_RegDate_button.Click += Search_RegDate_button_Click;
             // 
-            // toolStripSeparator1
+            // Search_RegDateFrom_label
             // 
-            toolStripSeparator1.Alignment = ToolStripItemAlignment.Right;
-            toolStripSeparator1.Name = "toolStripSeparator1";
-            toolStripSeparator1.Size = new Size(6, 54);
+            Search_RegDateFrom_label.AutoSize = true;
+            Search_RegDateFrom_label.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 238);
+            Search_RegDateFrom_label.Location = new Point(0, 130);
+            Search_RegDateFrom_label.Name = "Search_RegDateFrom_label";
+            Search_RegDateFrom_label.Size = new Size(94, 15);
+            Search_RegDateFrom_label.TabIndex = 14;
+            Search_RegDateFrom_label.Text = "Reg Date From:";
             // 
-            // toolStripSeparator2
+            // Search_Subject_Button
             // 
-            toolStripSeparator2.Name = "toolStripSeparator2";
-            toolStripSeparator2.Size = new Size(6, 54);
+            Search_Subject_Button.BackgroundImage = Properties.Resources.butt_background;
+            Search_Subject_Button.BackgroundImageLayout = ImageLayout.Stretch;
+            Search_Subject_Button.Cursor = Cursors.Hand;
+            Search_Subject_Button.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            Search_Subject_Button.ForeColor = Color.Black;
+            Search_Subject_Button.Image = Properties.Resources.butt_search2_32;
+            Search_Subject_Button.Location = new Point(246, 59);
+            Search_Subject_Button.Name = "Search_Subject_Button";
+            Search_Subject_Button.Size = new Size(103, 48);
+            Search_Subject_Button.TabIndex = 12;
+            Search_Subject_Button.Text = "Search";
+            Search_Subject_Button.TextImageRelation = TextImageRelation.ImageBeforeText;
+            Search_Subject_Button.UseVisualStyleBackColor = true;
+            Search_Subject_Button.Click += Search_Subject_Button_Click;
             // 
-            // toolStripSeparator3
+            // SearchSubject_label
             // 
-            toolStripSeparator3.Alignment = ToolStripItemAlignment.Right;
-            toolStripSeparator3.Name = "toolStripSeparator3";
-            toolStripSeparator3.Size = new Size(6, 54);
+            SearchSubject_label.AutoSize = true;
+            SearchSubject_label.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 238);
+            SearchSubject_label.Location = new Point(19, 73);
+            SearchSubject_label.Name = "SearchSubject_label";
+            SearchSubject_label.Size = new Size(75, 15);
+            SearchSubject_label.TabIndex = 11;
+            SearchSubject_label.Text = "Subject like:";
             // 
-            // toolStripSeparator4
+            // Search_Subject_TextBox
             // 
-            toolStripSeparator4.Alignment = ToolStripItemAlignment.Right;
-            toolStripSeparator4.Name = "toolStripSeparator4";
-            toolStripSeparator4.Size = new Size(6, 54);
+            Search_Subject_TextBox.Location = new Point(95, 70);
+            Search_Subject_TextBox.Name = "Search_Subject_TextBox";
+            Search_Subject_TextBox.Size = new Size(145, 23);
+            Search_Subject_TextBox.TabIndex = 10;
+            // 
+            // SearchID_Button
+            // 
+            SearchID_Button.BackgroundImage = Properties.Resources.butt_background;
+            SearchID_Button.BackgroundImageLayout = ImageLayout.Stretch;
+            SearchID_Button.Cursor = Cursors.Hand;
+            SearchID_Button.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            SearchID_Button.ForeColor = Color.Black;
+            SearchID_Button.Image = Properties.Resources.butt_search2_32;
+            SearchID_Button.Location = new Point(246, 5);
+            SearchID_Button.Name = "SearchID_Button";
+            SearchID_Button.Size = new Size(103, 48);
+            SearchID_Button.TabIndex = 9;
+            SearchID_Button.Text = "Search ID";
+            SearchID_Button.TextImageRelation = TextImageRelation.ImageBeforeText;
+            SearchID_Button.UseVisualStyleBackColor = true;
+            SearchID_Button.Click += SearchID_Button_Click;
+            // 
+            // ID_Label
+            // 
+            ID_Label.AutoSize = true;
+            ID_Label.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 238);
+            ID_Label.Location = new Point(71, 22);
+            ID_Label.Name = "ID_Label";
+            ID_Label.Size = new Size(23, 15);
+            ID_Label.TabIndex = 1;
+            ID_Label.Text = "ID:";
+            // 
+            // SearchID_textBox
+            // 
+            SearchID_textBox.Location = new Point(95, 16);
+            SearchID_textBox.Name = "SearchID_textBox";
+            SearchID_textBox.Size = new Size(145, 23);
+            SearchID_textBox.TabIndex = 0;
+            // 
+            // Search_panel1
+            // 
+            Search_panel1.BackgroundImage = Properties.Resources.down_icon;
+            Search_panel1.BorderStyle = BorderStyle.FixedSingle;
+            Search_panel1.Location = new Point(890, 57);
+            Search_panel1.Name = "Search_panel1";
+            Search_panel1.Size = new Size(75, 31);
+            Search_panel1.TabIndex = 4;
+            Search_panel1.Visible = false;
+            // 
+            // SearchDateTo_dateTimePicker
+            // 
+            SearchDateTo_dateTimePicker.Format = DateTimePickerFormat.Short;
+            SearchDateTo_dateTimePicker.Location = new Point(95, 153);
+            SearchDateTo_dateTimePicker.Name = "SearchDateTo_dateTimePicker";
+            SearchDateTo_dateTimePicker.Size = new Size(145, 23);
+            SearchDateTo_dateTimePicker.TabIndex = 18;
+            // 
+            // Search_RegDateTo_label
+            // 
+            Search_RegDateTo_label.AutoSize = true;
+            Search_RegDateTo_label.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 238);
+            Search_RegDateTo_label.Location = new Point(71, 159);
+            Search_RegDateTo_label.Name = "Search_RegDateTo_label";
+            Search_RegDateTo_label.Size = new Size(23, 15);
+            Search_RegDateTo_label.TabIndex = 17;
+            Search_RegDateTo_label.Text = "To:";
             // 
             // Incoming_Letters_Form
             // 
@@ -410,6 +577,8 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.WhiteSmoke;
             ClientSize = new Size(1026, 596);
+            Controls.Add(Search_panel1);
+            Controls.Add(Search_panel2);
             Controls.Add(dataGridView1);
             Controls.Add(Bottom_toolStrip);
             Controls.Add(Top_toolStrip);
@@ -427,6 +596,8 @@
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ((System.ComponentModel.ISupportInitialize)Incoming_Letters_bindingSource).EndInit();
             ((System.ComponentModel.ISupportInitialize)letters1).EndInit();
+            Search_panel2.ResumeLayout(false);
+            Search_panel2.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -471,5 +642,18 @@
         private ToolStripSeparator toolStripSeparator1;
         private ToolStripSeparator toolStripSeparator3;
         private ToolStripSeparator toolStripSeparator4;
+        private Panel Search_panel2;
+        private Panel Search_panel1;
+        private Label ID_Label;
+        private TextBox SearchID_textBox;
+        private Button SearchID_Button;
+        private Button Search_Subject_Button;
+        private Label SearchSubject_label;
+        private TextBox Search_Subject_TextBox;
+        private Button Search_RegDate_button;
+        private Label Search_RegDateFrom_label;
+        private DateTimePicker SearchDateFrom_dateTimePicker;
+        private DateTimePicker SearchDateTo_dateTimePicker;
+        private Label Search_RegDateTo_label;
     }
 }
