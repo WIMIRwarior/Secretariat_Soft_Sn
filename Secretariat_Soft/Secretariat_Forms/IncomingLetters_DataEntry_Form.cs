@@ -20,6 +20,11 @@ namespace Secretariat_Soft.Secretariat_Forms
         private void IncomingLetters_DataEntry_Form_Load(object sender, EventArgs e)
         {
             enable_add_edit_del_buttons();
+
+            //--------------------------
+            this.incoming_LettersTableAdapter1.FillBy_ID_desc(this.letters1.Incoming_Letters);
+            //--------------------------
+
         }
 
         void enable_add_edit_del_buttons()
@@ -46,6 +51,18 @@ namespace Secretariat_Soft.Secretariat_Forms
             this.Delete_Button.Enabled = false;
         }
 
+        void disable_del_buttons()
+        {
+            this.Main_groupBox.Enabled = false;
+
+            this.Cancel_Button.Enabled = true;
+            this.Save_Button.Enabled = true;
+
+            this.AddNew_Button.Enabled = false;
+            this.Edit_Button.Enabled = false;
+            this.Delete_Button.Enabled = false;
+        }
+
         void set_system_info()
         {
             this.SysDate_Label.Text = DateTime.Now.ToString("yyyy-MM-dd");
@@ -59,7 +76,12 @@ namespace Secretariat_Soft.Secretariat_Forms
         private void AddNew_Button_Click(object sender, EventArgs e)
         {
             disable_add_edit_del_buttons();
+            //--------------------------
+            this.bindingSource1.AddNew();  // Adding new row to the datatable.
+            //--------------------------
             set_system_info();
+            //--------------------------
+
         }
 
         private void Edit_Button_Click(object sender, EventArgs e)
@@ -70,16 +92,41 @@ namespace Secretariat_Soft.Secretariat_Forms
 
         private void Delete_Button_Click(object sender, EventArgs e)
         {
-            disable_add_edit_del_buttons();
+            try
+            {
+                this.bindingSource1.RemoveCurrent();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error!" + ex.Message);
+            }
+            
+            disable_del_buttons();
         }
 
         private void Save_Button_Click(object sender, EventArgs e)
         {
+            try
+            {
+                //----------
+                this.bindingSource1.EndEdit();
+                //----------
+
+                this.incoming_LettersTableAdapter1.Update(this.letters1.Incoming_Letters);
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Error!" + ex.Message);
+            }
+            //-----------------------------
             enable_add_edit_del_buttons();
         }
 
         private void Cancel_Button_Click(object sender, EventArgs e)
         {
+            this.bindingSource1.CancelEdit();
+            this.letters1.Incoming_Letters.RejectChanges();
+
             enable_add_edit_del_buttons();
         }
 

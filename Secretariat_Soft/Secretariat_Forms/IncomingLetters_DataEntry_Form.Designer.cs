@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             Top_toolStrip = new ToolStrip();
             AddNew_Button = new ToolStripButton();
             toolStripSeparator5 = new ToolStripSeparator();
@@ -52,7 +53,13 @@
             UserName_Label = new Label();
             label1 = new Label();
             Main_groupBox = new GroupBox();
-            PagesNumber_TextBox = new TextBox();
+            PageCount_numericUpDown = new NumericUpDown();
+            bindingSource1 = new BindingSource(components);
+            letters1 = new Secretariat_Soft.DataSet.Letters();
+            ResponseDeadline_maskedTextBox = new MaskedTextBox();
+            RelatedToDoc_TextBox = new TextBox();
+            DocSummary_TextBox = new TextBox();
+            Priority_comboBox = new ComboBox();
             Group_TextBox = new TextBox();
             ReceiveMethod_TextBox = new TextBox();
             Recipient_TextBox = new TextBox();
@@ -78,13 +85,13 @@
             label6 = new Label();
             label4 = new Label();
             label2 = new Label();
-            Priority_comboBox = new ComboBox();
-            DocSummary_TextBox = new TextBox();
-            RelatedToDoc_TextBox = new TextBox();
-            ResponseDeadline_maskedTextBox = new MaskedTextBox();
+            incoming_LettersTableAdapter1 = new Secretariat_Soft.DataSet.LettersTableAdapters.Incoming_LettersTableAdapter();
             Top_toolStrip.SuspendLayout();
             panel1.SuspendLayout();
             Main_groupBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)PageCount_numericUpDown).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)bindingSource1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)letters1).BeginInit();
             SuspendLayout();
             // 
             // Top_toolStrip
@@ -241,6 +248,7 @@
             // 
             // SysTime_Label
             // 
+            SysTime_Label.DataBindings.Add(new Binding("Text", bindingSource1, "System_Time", true));
             SysTime_Label.Location = new Point(702, 9);
             SysTime_Label.Name = "SysTime_Label";
             SysTime_Label.Size = new Size(85, 15);
@@ -258,6 +266,7 @@
             // 
             // SysDate_Label
             // 
+            SysDate_Label.DataBindings.Add(new Binding("Text", bindingSource1, "System_Date", true));
             SysDate_Label.Location = new Point(508, 9);
             SysDate_Label.Name = "SysDate_Label";
             SysDate_Label.Size = new Size(104, 15);
@@ -275,6 +284,7 @@
             // 
             // UserID_Label
             // 
+            UserID_Label.DataBindings.Add(new Binding("Text", bindingSource1, "User_ID", true));
             UserID_Label.Location = new Point(331, 9);
             UserID_Label.Name = "UserID_Label";
             UserID_Label.Size = new Size(38, 15);
@@ -292,6 +302,7 @@
             // 
             // UserName_Label
             // 
+            UserName_Label.DataBindings.Add(new Binding("Text", bindingSource1, "User_Name", true));
             UserName_Label.Location = new Point(90, 9);
             UserName_Label.Name = "UserName_Label";
             UserName_Label.Size = new Size(182, 15);
@@ -309,11 +320,11 @@
             // 
             // Main_groupBox
             // 
+            Main_groupBox.Controls.Add(PageCount_numericUpDown);
             Main_groupBox.Controls.Add(ResponseDeadline_maskedTextBox);
             Main_groupBox.Controls.Add(RelatedToDoc_TextBox);
             Main_groupBox.Controls.Add(DocSummary_TextBox);
             Main_groupBox.Controls.Add(Priority_comboBox);
-            Main_groupBox.Controls.Add(PagesNumber_TextBox);
             Main_groupBox.Controls.Add(Group_TextBox);
             Main_groupBox.Controls.Add(ReceiveMethod_TextBox);
             Main_groupBox.Controls.Add(Recipient_TextBox);
@@ -346,16 +357,64 @@
             Main_groupBox.TabStop = false;
             Main_groupBox.Text = "Info";
             // 
-            // PagesNumber_TextBox
+            // PageCount_numericUpDown
             // 
-            PagesNumber_TextBox.Location = new Point(154, 330);
-            PagesNumber_TextBox.Name = "PagesNumber_TextBox";
-            PagesNumber_TextBox.Size = new Size(229, 23);
-            PagesNumber_TextBox.TabIndex = 25;
-            PagesNumber_TextBox.TextChanged += textBox8_TextChanged;
+            PageCount_numericUpDown.DataBindings.Add(new Binding("Value", bindingSource1, "Page_Count", true));
+            PageCount_numericUpDown.ImeMode = ImeMode.NoControl;
+            PageCount_numericUpDown.Location = new Point(154, 330);
+            PageCount_numericUpDown.Name = "PageCount_numericUpDown";
+            PageCount_numericUpDown.Size = new Size(120, 23);
+            PageCount_numericUpDown.TabIndex = 30;
+            // 
+            // bindingSource1
+            // 
+            bindingSource1.DataMember = "Incoming_Letters";
+            bindingSource1.DataSource = letters1;
+            // 
+            // letters1
+            // 
+            letters1.DataSetName = "Letters";
+            letters1.Namespace = "http://tempuri.org/Letters.xsd";
+            letters1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // ResponseDeadline_maskedTextBox
+            // 
+            ResponseDeadline_maskedTextBox.DataBindings.Add(new Binding("Text", bindingSource1, "Response_Deadline", true));
+            ResponseDeadline_maskedTextBox.Location = new Point(154, 359);
+            ResponseDeadline_maskedTextBox.Name = "ResponseDeadline_maskedTextBox";
+            ResponseDeadline_maskedTextBox.Size = new Size(229, 23);
+            ResponseDeadline_maskedTextBox.TabIndex = 29;
+            // 
+            // RelatedToDoc_TextBox
+            // 
+            RelatedToDoc_TextBox.DataBindings.Add(new Binding("Text", bindingSource1, "Related_to_Doc", true));
+            RelatedToDoc_TextBox.Location = new Point(154, 388);
+            RelatedToDoc_TextBox.Name = "RelatedToDoc_TextBox";
+            RelatedToDoc_TextBox.Size = new Size(229, 23);
+            RelatedToDoc_TextBox.TabIndex = 28;
+            // 
+            // DocSummary_TextBox
+            // 
+            DocSummary_TextBox.DataBindings.Add(new Binding("Text", bindingSource1, "Doc_Summary", true));
+            DocSummary_TextBox.Location = new Point(154, 417);
+            DocSummary_TextBox.Multiline = true;
+            DocSummary_TextBox.Name = "DocSummary_TextBox";
+            DocSummary_TextBox.ScrollBars = ScrollBars.Vertical;
+            DocSummary_TextBox.Size = new Size(616, 187);
+            DocSummary_TextBox.TabIndex = 27;
+            // 
+            // Priority_comboBox
+            // 
+            Priority_comboBox.FormattingEnabled = true;
+            Priority_comboBox.Items.AddRange(new object[] { "Low", "Normal", "High" });
+            Priority_comboBox.Location = new Point(154, 301);
+            Priority_comboBox.Name = "Priority_comboBox";
+            Priority_comboBox.Size = new Size(121, 23);
+            Priority_comboBox.TabIndex = 26;
             // 
             // Group_TextBox
             // 
+            Group_TextBox.DataBindings.Add(new Binding("Text", bindingSource1, "Group_Name", true));
             Group_TextBox.Location = new Point(154, 272);
             Group_TextBox.Name = "Group_TextBox";
             Group_TextBox.Size = new Size(229, 23);
@@ -363,6 +422,7 @@
             // 
             // ReceiveMethod_TextBox
             // 
+            ReceiveMethod_TextBox.DataBindings.Add(new Binding("Text", bindingSource1, "Receive_Method", true));
             ReceiveMethod_TextBox.Location = new Point(154, 243);
             ReceiveMethod_TextBox.Name = "ReceiveMethod_TextBox";
             ReceiveMethod_TextBox.Size = new Size(229, 23);
@@ -370,6 +430,7 @@
             // 
             // Recipient_TextBox
             // 
+            Recipient_TextBox.DataBindings.Add(new Binding("Text", bindingSource1, "Recipient", true));
             Recipient_TextBox.Location = new Point(154, 214);
             Recipient_TextBox.Name = "Recipient_TextBox";
             Recipient_TextBox.Size = new Size(229, 23);
@@ -377,6 +438,7 @@
             // 
             // Sender_TextBox
             // 
+            Sender_TextBox.DataBindings.Add(new Binding("Text", bindingSource1, "Sender", true));
             Sender_TextBox.Location = new Point(154, 185);
             Sender_TextBox.Name = "Sender_TextBox";
             Sender_TextBox.Size = new Size(229, 23);
@@ -384,6 +446,7 @@
             // 
             // LetterTime_maskedTextBox
             // 
+            LetterTime_maskedTextBox.DataBindings.Add(new Binding("Text", bindingSource1, "Letter_Time", true));
             LetterTime_maskedTextBox.Location = new Point(154, 98);
             LetterTime_maskedTextBox.Name = "LetterTime_maskedTextBox";
             LetterTime_maskedTextBox.Size = new Size(229, 23);
@@ -391,6 +454,7 @@
             // 
             // DateReceived_maskedTextBox
             // 
+            DateReceived_maskedTextBox.DataBindings.Add(new Binding("Text", bindingSource1, "Date_Received", true));
             DateReceived_maskedTextBox.Location = new Point(154, 127);
             DateReceived_maskedTextBox.Name = "DateReceived_maskedTextBox";
             DateReceived_maskedTextBox.Size = new Size(229, 23);
@@ -398,6 +462,7 @@
             // 
             // LetterType_TextBox
             // 
+            LetterType_TextBox.DataBindings.Add(new Binding("Text", bindingSource1, "Letter_Type", true));
             LetterType_TextBox.Location = new Point(154, 156);
             LetterType_TextBox.Name = "LetterType_TextBox";
             LetterType_TextBox.Size = new Size(229, 23);
@@ -405,6 +470,7 @@
             // 
             // RegDate_maskedTextBox
             // 
+            RegDate_maskedTextBox.DataBindings.Add(new Binding("Text", bindingSource1, "Reg_Date", true));
             RegDate_maskedTextBox.Location = new Point(154, 40);
             RegDate_maskedTextBox.Name = "RegDate_maskedTextBox";
             RegDate_maskedTextBox.Size = new Size(229, 23);
@@ -412,6 +478,7 @@
             // 
             // LetterNum_TextBox
             // 
+            LetterNum_TextBox.DataBindings.Add(new Binding("Text", bindingSource1, "Letter_Number", true));
             LetterNum_TextBox.Location = new Point(154, 69);
             LetterNum_TextBox.Name = "LetterNum_TextBox";
             LetterNum_TextBox.Size = new Size(229, 23);
@@ -419,6 +486,7 @@
             // 
             // Subject_TextBox
             // 
+            Subject_TextBox.DataBindings.Add(new Binding("Text", bindingSource1, "Subject", true));
             Subject_TextBox.Location = new Point(154, 11);
             Subject_TextBox.Name = "Subject_TextBox";
             Subject_TextBox.Size = new Size(616, 23);
@@ -560,37 +628,9 @@
             label2.TabIndex = 0;
             label2.Text = "Subject :";
             // 
-            // Priority_comboBox
+            // incoming_LettersTableAdapter1
             // 
-            Priority_comboBox.FormattingEnabled = true;
-            Priority_comboBox.Items.AddRange(new object[] { "Low", "Normal", "High" });
-            Priority_comboBox.Location = new Point(154, 301);
-            Priority_comboBox.Name = "Priority_comboBox";
-            Priority_comboBox.Size = new Size(121, 23);
-            Priority_comboBox.TabIndex = 26;
-            // 
-            // DocSummary_TextBox
-            // 
-            DocSummary_TextBox.Location = new Point(154, 417);
-            DocSummary_TextBox.Multiline = true;
-            DocSummary_TextBox.Name = "DocSummary_TextBox";
-            DocSummary_TextBox.ScrollBars = ScrollBars.Vertical;
-            DocSummary_TextBox.Size = new Size(616, 187);
-            DocSummary_TextBox.TabIndex = 27;
-            // 
-            // RelatedToDoc_TextBox
-            // 
-            RelatedToDoc_TextBox.Location = new Point(154, 388);
-            RelatedToDoc_TextBox.Name = "RelatedToDoc_TextBox";
-            RelatedToDoc_TextBox.Size = new Size(229, 23);
-            RelatedToDoc_TextBox.TabIndex = 28;
-            // 
-            // ResponseDeadline_maskedTextBox
-            // 
-            ResponseDeadline_maskedTextBox.Location = new Point(154, 359);
-            ResponseDeadline_maskedTextBox.Name = "ResponseDeadline_maskedTextBox";
-            ResponseDeadline_maskedTextBox.Size = new Size(229, 23);
-            ResponseDeadline_maskedTextBox.TabIndex = 29;
+            incoming_LettersTableAdapter1.ClearBeforeFill = true;
             // 
             // IncomingLetters_DataEntry_Form
             // 
@@ -614,6 +654,9 @@
             panel1.PerformLayout();
             Main_groupBox.ResumeLayout(false);
             Main_groupBox.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)PageCount_numericUpDown).EndInit();
+            ((System.ComponentModel.ISupportInitialize)bindingSource1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)letters1).EndInit();
             ResumeLayout(false);
         }
 
@@ -666,12 +709,15 @@
         private MaskedTextBox DateReceived_maskedTextBox;
         private TextBox LetterType_TextBox;
         private MaskedTextBox RegDate_maskedTextBox;
-        private TextBox PagesNumber_TextBox;
         private TextBox Group_TextBox;
         private TextBox ReceiveMethod_TextBox;
         private MaskedTextBox ResponseDeadline_maskedTextBox;
         private TextBox RelatedToDoc_TextBox;
         private TextBox DocSummary_TextBox;
+        private DataSet.Letters letters1;
+        private DataSet.LettersTableAdapters.Incoming_LettersTableAdapter incoming_LettersTableAdapter1;
+        private BindingSource bindingSource1;
+        private NumericUpDown PageCount_numericUpDown;
         private ComboBox Priority_comboBox;
     }
 }

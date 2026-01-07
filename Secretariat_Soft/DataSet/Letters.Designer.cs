@@ -1773,7 +1773,7 @@ SELECT ID, Subject, Reg_Date, Letter_Number, Letter_Time, Date_Received, Letter_
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[4];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[5];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = @"SELECT        ID, Subject, Reg_Date, Letter_Number, Letter_Time, Date_Received, Letter_Type, Sender, Recipient, Receive_Method, Group_Name, Priority, Page_Count, Response_Deadline, Related_to_Doc, Doc_Summary, User_Name, 
@@ -1783,10 +1783,7 @@ ORDER BY ID";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = @"SELECT        ID, Subject, Reg_Date, Letter_Number, Letter_Time, Date_Received, Letter_Type, Sender, Recipient, Receive_Method, Group_Name, Priority, Page_Count, Response_Deadline, Related_to_Doc, Doc_Summary, User_Name, 
-                         User_ID, System_Date, System_Time
-FROM            Incoming_Letters
-WHERE        (ID = @Search_ID)";
+            this._commandCollection[1].CommandText = @"SELECT Date_Received, Doc_Summary, Group_Name, ID, Letter_Number, Letter_Time, Letter_Type, Page_Count, Priority, Receive_Method, Recipient, Reg_Date, Related_to_Doc, Response_Deadline, Sender, Subject, System_Date, System_Time, User_ID, User_Name FROM Incoming_Letters WHERE (ID = @Search_ID)";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Search_ID", global::System.Data.SqlDbType.BigInt, 8, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
@@ -1794,19 +1791,19 @@ WHERE        (ID = @Search_ID)";
             this._commandCollection[2].CommandText = @"SELECT        ID, Subject, Reg_Date, Letter_Number, Letter_Time, Date_Received, Letter_Type, Sender, Recipient, Receive_Method, Group_Name, Priority, Page_Count, Response_Deadline, Related_to_Doc, Doc_Summary, User_Name, 
                          User_ID, System_Date, System_Time
 FROM            Incoming_Letters
-WHERE        (Reg_Date >= @SearchRegDateFrom AND Reg_Date <= @SearchRegDateTo)
-ORDER BY ID";
+ORDER BY ID DESC";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SearchRegDateFrom", global::System.Data.SqlDbType.Date, 3, global::System.Data.ParameterDirection.Input, 0, 0, "Reg_Date", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SearchRegDateTo", global::System.Data.SqlDbType.Date, 3, global::System.Data.ParameterDirection.Input, 0, 0, "Reg_Date", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[3].Connection = this.Connection;
-            this._commandCollection[3].CommandText = @"SELECT        ID, Subject, Reg_Date, Letter_Number, Letter_Time, Date_Received, Letter_Type, Sender, Recipient, Receive_Method, Group_Name, Priority, Page_Count, Response_Deadline, Related_to_Doc, Doc_Summary, User_Name, 
-                         User_ID, System_Date, System_Time
-FROM            Incoming_Letters
-WHERE        (Subject LIKE '%' + @Subject_Pattern + '%')";
+            this._commandCollection[3].CommandText = @"SELECT Date_Received, Doc_Summary, Group_Name, ID, Letter_Number, Letter_Time, Letter_Type, Page_Count, Priority, Receive_Method, Recipient, Reg_Date, Related_to_Doc, Response_Deadline, Sender, Subject, System_Date, System_Time, User_ID, User_Name FROM Incoming_Letters WHERE (Reg_Date >= @SearchRegDateFrom) AND (Reg_Date <= @SearchRegDateTo) ORDER BY ID";
             this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Subject_Pattern", global::System.Data.SqlDbType.NVarChar, 200, global::System.Data.ParameterDirection.Input, 0, 0, "Subject", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SearchRegDateFrom", global::System.Data.SqlDbType.Date, 3, global::System.Data.ParameterDirection.Input, 0, 0, "Reg_Date", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SearchRegDateTo", global::System.Data.SqlDbType.Date, 3, global::System.Data.ParameterDirection.Input, 0, 0, "Reg_Date", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[4] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[4].Connection = this.Connection;
+            this._commandCollection[4].CommandText = @"SELECT Date_Received, Doc_Summary, Group_Name, ID, Letter_Number, Letter_Time, Letter_Type, Page_Count, Priority, Receive_Method, Recipient, Reg_Date, Related_to_Doc, Response_Deadline, Sender, Subject, System_Date, System_Time, User_ID, User_Name FROM Incoming_Letters WHERE (Subject LIKE '%' + @Subject_Pattern + '%')";
+            this._commandCollection[4].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Subject_Pattern", global::System.Data.SqlDbType.NVarChar, 200, global::System.Data.ParameterDirection.Input, 0, 0, "Subject", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1851,8 +1848,32 @@ WHERE        (Subject LIKE '%' + @Subject_Pattern + '%')";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
-        public virtual int FillBy_RegDate(Letters.Incoming_LettersDataTable dataTable, string SearchRegDateFrom, string SearchRegDateTo) {
+        public virtual int FillBy_ID_desc(Letters.Incoming_LettersDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[2];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual Letters.Incoming_LettersDataTable GetDataBy_ID_desc() {
+            this.Adapter.SelectCommand = this.CommandCollection[2];
+            Letters.Incoming_LettersDataTable dataTable = new Letters.Incoming_LettersDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillBy_RegDate(Letters.Incoming_LettersDataTable dataTable, string SearchRegDateFrom, string SearchRegDateTo) {
+            this.Adapter.SelectCommand = this.CommandCollection[3];
             if ((SearchRegDateFrom == null)) {
                 this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
@@ -1877,7 +1898,7 @@ WHERE        (Subject LIKE '%' + @Subject_Pattern + '%')";
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
         public virtual int FillBy_Subject(Letters.Incoming_LettersDataTable dataTable, string Subject_Pattern) {
-            this.Adapter.SelectCommand = this.CommandCollection[3];
+            this.Adapter.SelectCommand = this.CommandCollection[4];
             if ((Subject_Pattern == null)) {
                 this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
