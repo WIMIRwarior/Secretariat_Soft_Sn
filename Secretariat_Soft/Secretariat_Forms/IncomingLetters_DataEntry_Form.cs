@@ -65,8 +65,7 @@ namespace Secretariat_Soft.Secretariat_Forms
 
         void set_system_info()
         {
-            this.SysDate_Label.Text = DateTime.Now.ToString("yyyy-MM-dd");
-            this.SysTime_Label.Text = DateTime.Now.ToString("HH:mm:ss");
+            this.SysTime_Label.Text = DateTime.Now.ToShortTimeString();
             //------------------------------------------------------------
             this.UserName_Label.Text = Secretariat_Soft.Properties.Settings.Default.User_Name;
             this.UserID_Label.Text = Secretariat_Soft.Properties.Settings.Default.User_ID.ToString();
@@ -81,7 +80,10 @@ namespace Secretariat_Soft.Secretariat_Forms
             //--------------------------
             set_system_info();
             //--------------------------
-
+            this.LetterTime_maskedTextBox.Text = DateTime.Now.ToShortTimeString();
+            //--------------------------
+            this.Priority_comboBox.SelectedIndex = 1;
+            //--------------------------
         }
 
         private void Edit_Button_Click(object sender, EventArgs e)
@@ -100,7 +102,7 @@ namespace Secretariat_Soft.Secretariat_Forms
             {
                 MessageBox.Show("Error!" + ex.Message);
             }
-            
+
             disable_del_buttons();
         }
 
@@ -114,7 +116,7 @@ namespace Secretariat_Soft.Secretariat_Forms
 
                 this.incoming_LettersTableAdapter1.Update(this.letters1.Incoming_Letters);
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show("Error!" + ex.Message);
             }
@@ -135,5 +137,15 @@ namespace Secretariat_Soft.Secretariat_Forms
 
         private void textBox8_TextChanged(object sender, EventArgs e)
         { }
+
+        private void RegDate_Today_Button_Click(object sender, EventArgs e)
+        {
+            this.RegDate_maskedTextBox.Text = DateTime.Now.ToShortDateString();
+        }
+
+        private void DateRecived_Today_Button_Click(object sender, EventArgs e)
+        {
+            this.DateReceived_maskedTextBox.Text = DateTime.Now.ToShortDateString();
+        }
     }
 }

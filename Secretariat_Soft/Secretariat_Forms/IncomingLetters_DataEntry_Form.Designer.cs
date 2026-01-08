@@ -45,6 +45,8 @@
             toolStripSeparator7 = new ToolStripSeparator();
             panel1 = new Panel();
             SysTime_Label = new Label();
+            bindingSource1 = new BindingSource(components);
+            letters1 = new Secretariat_Soft.DataSet.Letters();
             label7 = new Label();
             SysDate_Label = new Label();
             label5 = new Label();
@@ -53,9 +55,9 @@
             UserName_Label = new Label();
             label1 = new Label();
             Main_groupBox = new GroupBox();
+            DateRecived_Today_Button = new Button();
+            RegDate_Today_Button = new Button();
             PageCount_numericUpDown = new NumericUpDown();
-            bindingSource1 = new BindingSource(components);
-            letters1 = new Secretariat_Soft.DataSet.Letters();
             ResponseDeadline_maskedTextBox = new MaskedTextBox();
             RelatedToDoc_TextBox = new TextBox();
             DocSummary_TextBox = new TextBox();
@@ -88,10 +90,10 @@
             incoming_LettersTableAdapter1 = new Secretariat_Soft.DataSet.LettersTableAdapters.Incoming_LettersTableAdapter();
             Top_toolStrip.SuspendLayout();
             panel1.SuspendLayout();
-            Main_groupBox.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)PageCount_numericUpDown).BeginInit();
             ((System.ComponentModel.ISupportInitialize)bindingSource1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)letters1).BeginInit();
+            Main_groupBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)PageCount_numericUpDown).BeginInit();
             SuspendLayout();
             // 
             // Top_toolStrip
@@ -255,6 +257,17 @@
             SysTime_Label.TabIndex = 7;
             SysTime_Label.Text = "-";
             // 
+            // bindingSource1
+            // 
+            bindingSource1.DataMember = "Incoming_Letters";
+            bindingSource1.DataSource = letters1;
+            // 
+            // letters1
+            // 
+            letters1.DataSetName = "Letters";
+            letters1.Namespace = "http://tempuri.org/Letters.xsd";
+            letters1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // label7
             // 
             label7.AutoSize = true;
@@ -320,6 +333,8 @@
             // 
             // Main_groupBox
             // 
+            Main_groupBox.Controls.Add(DateRecived_Today_Button);
+            Main_groupBox.Controls.Add(RegDate_Today_Button);
             Main_groupBox.Controls.Add(PageCount_numericUpDown);
             Main_groupBox.Controls.Add(ResponseDeadline_maskedTextBox);
             Main_groupBox.Controls.Add(RelatedToDoc_TextBox);
@@ -357,6 +372,28 @@
             Main_groupBox.TabStop = false;
             Main_groupBox.Text = "Info";
             // 
+            // DateRecived_Today_Button
+            // 
+            DateRecived_Today_Button.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            DateRecived_Today_Button.Location = new Point(389, 127);
+            DateRecived_Today_Button.Name = "DateRecived_Today_Button";
+            DateRecived_Today_Button.Size = new Size(75, 23);
+            DateRecived_Today_Button.TabIndex = 32;
+            DateRecived_Today_Button.Text = "Today";
+            DateRecived_Today_Button.UseVisualStyleBackColor = true;
+            DateRecived_Today_Button.Click += DateRecived_Today_Button_Click;
+            // 
+            // RegDate_Today_Button
+            // 
+            RegDate_Today_Button.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            RegDate_Today_Button.Location = new Point(389, 40);
+            RegDate_Today_Button.Name = "RegDate_Today_Button";
+            RegDate_Today_Button.Size = new Size(75, 23);
+            RegDate_Today_Button.TabIndex = 31;
+            RegDate_Today_Button.Text = "Today";
+            RegDate_Today_Button.UseVisualStyleBackColor = true;
+            RegDate_Today_Button.Click += RegDate_Today_Button_Click;
+            // 
             // PageCount_numericUpDown
             // 
             PageCount_numericUpDown.DataBindings.Add(new Binding("Value", bindingSource1, "Page_Count", true));
@@ -366,21 +403,11 @@
             PageCount_numericUpDown.Size = new Size(120, 23);
             PageCount_numericUpDown.TabIndex = 30;
             // 
-            // bindingSource1
-            // 
-            bindingSource1.DataMember = "Incoming_Letters";
-            bindingSource1.DataSource = letters1;
-            // 
-            // letters1
-            // 
-            letters1.DataSetName = "Letters";
-            letters1.Namespace = "http://tempuri.org/Letters.xsd";
-            letters1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // ResponseDeadline_maskedTextBox
             // 
             ResponseDeadline_maskedTextBox.DataBindings.Add(new Binding("Text", bindingSource1, "Response_Deadline", true));
             ResponseDeadline_maskedTextBox.Location = new Point(154, 359);
+            ResponseDeadline_maskedTextBox.Mask = "0000-00-00";
             ResponseDeadline_maskedTextBox.Name = "ResponseDeadline_maskedTextBox";
             ResponseDeadline_maskedTextBox.Size = new Size(229, 23);
             ResponseDeadline_maskedTextBox.TabIndex = 29;
@@ -448,6 +475,7 @@
             // 
             LetterTime_maskedTextBox.DataBindings.Add(new Binding("Text", bindingSource1, "Letter_Time", true));
             LetterTime_maskedTextBox.Location = new Point(154, 98);
+            LetterTime_maskedTextBox.Mask = "00:00:00";
             LetterTime_maskedTextBox.Name = "LetterTime_maskedTextBox";
             LetterTime_maskedTextBox.Size = new Size(229, 23);
             LetterTime_maskedTextBox.TabIndex = 20;
@@ -456,6 +484,7 @@
             // 
             DateReceived_maskedTextBox.DataBindings.Add(new Binding("Text", bindingSource1, "Date_Received", true));
             DateReceived_maskedTextBox.Location = new Point(154, 127);
+            DateReceived_maskedTextBox.Mask = "0000-00-00";
             DateReceived_maskedTextBox.Name = "DateReceived_maskedTextBox";
             DateReceived_maskedTextBox.Size = new Size(229, 23);
             DateReceived_maskedTextBox.TabIndex = 19;
@@ -472,6 +501,7 @@
             // 
             RegDate_maskedTextBox.DataBindings.Add(new Binding("Text", bindingSource1, "Reg_Date", true));
             RegDate_maskedTextBox.Location = new Point(154, 40);
+            RegDate_maskedTextBox.Mask = "0000-00-00";
             RegDate_maskedTextBox.Name = "RegDate_maskedTextBox";
             RegDate_maskedTextBox.Size = new Size(229, 23);
             RegDate_maskedTextBox.TabIndex = 17;
@@ -652,11 +682,11 @@
             Top_toolStrip.PerformLayout();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)bindingSource1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)letters1).EndInit();
             Main_groupBox.ResumeLayout(false);
             Main_groupBox.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)PageCount_numericUpDown).EndInit();
-            ((System.ComponentModel.ISupportInitialize)bindingSource1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)letters1).EndInit();
             ResumeLayout(false);
         }
 
@@ -719,5 +749,7 @@
         private BindingSource bindingSource1;
         private NumericUpDown PageCount_numericUpDown;
         private ComboBox Priority_comboBox;
+        private Button DateRecived_Today_Button;
+        private Button RegDate_Today_Button;
     }
 }
