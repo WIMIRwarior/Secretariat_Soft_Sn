@@ -163,6 +163,26 @@ namespace Secretariat_Soft.Properties {
         /// <summary>
         ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap cycle_11044416 {
+            get {
+                object obj = ResourceManager.GetObject("cycle_11044416", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap cycle_11044416_1_ {
+            get {
+                object obj = ResourceManager.GetObject("cycle_11044416(1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap de_button_cancel24 {
             get {
                 object obj = ResourceManager.GetObject("de_button_cancel24", resourceCulture);

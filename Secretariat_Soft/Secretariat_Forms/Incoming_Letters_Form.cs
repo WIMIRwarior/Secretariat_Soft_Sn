@@ -17,6 +17,9 @@ namespace Secretariat_Soft.Secretariat_Forms
             InitializeComponent();
         }
 
+        private int selectedID;
+
+
         private void Incoming_Letters_Form_Load(object sender, EventArgs e)
         {
             try
@@ -130,7 +133,7 @@ namespace Secretariat_Soft.Secretariat_Forms
         {
             string SearchRegDateFrom = "";
             string SearchRegDateTo = "";
-            if (SearchDateFrom_dateTimePicker.Value.ToString("yyyy-MM-dd").Length>0)
+            if (SearchDateFrom_dateTimePicker.Value.ToString("yyyy-MM-dd").Length > 0)
             {
                 SearchRegDateFrom = SearchDateFrom_dateTimePicker.Value.ToString("yyyy-MM-dd");
             }
@@ -143,13 +146,36 @@ namespace Secretariat_Soft.Secretariat_Forms
             {
                 this.incoming_LettersTableAdapter1.FillBy_RegDate(letters1.Incoming_Letters, SearchRegDateFrom, SearchRegDateTo);
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show("Error!" + ex.Message);
             }
             //-------------------------
             update_position_text();
             //-------------------------
+        }
+
+        private void AddEditDoc_Button_Click(object sender, EventArgs e)
+        {
+            Secretariat_Forms.IncomingLetters_DataEntry_Form IL_DataEntry_Form;
+            int Current_ID = -1;
+            Current_ID = Convert.ToInt32(this.dataGridView1.CurrentRow.Cells["iDDataGridViewTextBoxColumn"].Value);
+            if (Current_ID != -1)
+            {
+                IL_DataEntry_Form = new IncomingLetters_DataEntry_Form(Current_ID);
+            }
+            else
+            {
+                IL_DataEntry_Form = new IncomingLetters_DataEntry_Form();
+            }
+
+            IL_DataEntry_Form.ShowDialog();
+        }
+
+        private void Refresh_Button_Click(object sender, EventArgs e)
+        {
+            this.incoming_LettersTableAdapter1.Fill(letters1.Incoming_Letters);
+            update_position_text();
         }
     }
 }

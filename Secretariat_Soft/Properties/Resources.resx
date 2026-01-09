@@ -148,6 +148,12 @@
   <data name="collapse" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Sources\Images\collapse.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="cycle_11044416" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Sources\Images\cycle_11044416.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="cycle_11044416(1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Sources\Images\cycle_11044416(1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Default_user" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Sources\Images\Default_user.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>

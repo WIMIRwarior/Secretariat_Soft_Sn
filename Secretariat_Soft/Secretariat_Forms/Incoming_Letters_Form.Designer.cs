@@ -29,16 +29,18 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
             Top_toolStrip = new ToolStrip();
-            AddEditDoc_Button = new ToolStripButton();
-            toolStripSeparator2 = new ToolStripSeparator();
             toolStripSeparator1 = new ToolStripSeparator();
             Print_Button = new ToolStripButton();
             toolStripSeparator4 = new ToolStripSeparator();
             Search_Button = new ToolStripButton();
             toolStripSeparator3 = new ToolStripSeparator();
+            AddEditDoc_Button = new ToolStripButton();
+            toolStripSeparator5 = new ToolStripSeparator();
+            Refresh_Button = new ToolStripButton();
+            toolStripSeparator2 = new ToolStripSeparator();
             Bottom_toolStrip = new ToolStrip();
             First_Button = new ToolStripButton();
             Previous_Button = new ToolStripButton();
@@ -71,6 +73,8 @@
             letters1 = new Secretariat_Soft.DataSet.Letters();
             incoming_LettersTableAdapter1 = new Secretariat_Soft.DataSet.LettersTableAdapters.Incoming_LettersTableAdapter();
             Search_panel2 = new Panel();
+            SearchDateTo_dateTimePicker = new DateTimePicker();
+            Search_RegDateTo_label = new Label();
             SearchDateFrom_dateTimePicker = new DateTimePicker();
             Search_RegDate_button = new Button();
             Search_RegDateFrom_label = new Label();
@@ -81,8 +85,6 @@
             ID_Label = new Label();
             SearchID_textBox = new TextBox();
             Search_panel1 = new Panel();
-            SearchDateTo_dateTimePicker = new DateTimePicker();
-            Search_RegDateTo_label = new Label();
             Top_toolStrip.SuspendLayout();
             Bottom_toolStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
@@ -94,30 +96,12 @@
             // Top_toolStrip
             // 
             Top_toolStrip.AutoSize = false;
-            Top_toolStrip.Items.AddRange(new ToolStripItem[] { AddEditDoc_Button, toolStripSeparator2, toolStripSeparator1, Print_Button, toolStripSeparator4, Search_Button, toolStripSeparator3 });
+            Top_toolStrip.Items.AddRange(new ToolStripItem[] { toolStripSeparator1, Print_Button, toolStripSeparator4, Search_Button, toolStripSeparator3, AddEditDoc_Button, toolStripSeparator5, Refresh_Button, toolStripSeparator2 });
             Top_toolStrip.Location = new Point(0, 0);
             Top_toolStrip.Name = "Top_toolStrip";
             Top_toolStrip.Size = new Size(1026, 54);
             Top_toolStrip.TabIndex = 0;
             Top_toolStrip.Text = "toolStrip1";
-            // 
-            // AddEditDoc_Button
-            // 
-            AddEditDoc_Button.BackgroundImage = Properties.Resources.butt_background;
-            AddEditDoc_Button.BackgroundImageLayout = ImageLayout.Stretch;
-            AddEditDoc_Button.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 238);
-            AddEditDoc_Button.Image = Properties.Resources.top_input_butt;
-            AddEditDoc_Button.ImageScaling = ToolStripItemImageScaling.None;
-            AddEditDoc_Button.ImageTransparentColor = Color.Magenta;
-            AddEditDoc_Button.Name = "AddEditDoc_Button";
-            AddEditDoc_Button.Size = new Size(140, 51);
-            AddEditDoc_Button.Text = "Add | Edit document F2";
-            AddEditDoc_Button.TextImageRelation = TextImageRelation.ImageAboveText;
-            // 
-            // toolStripSeparator2
-            // 
-            toolStripSeparator2.Name = "toolStripSeparator2";
-            toolStripSeparator2.Size = new Size(6, 54);
             // 
             // toolStripSeparator1
             // 
@@ -165,6 +149,46 @@
             toolStripSeparator3.Alignment = ToolStripItemAlignment.Right;
             toolStripSeparator3.Name = "toolStripSeparator3";
             toolStripSeparator3.Size = new Size(6, 54);
+            // 
+            // AddEditDoc_Button
+            // 
+            AddEditDoc_Button.BackgroundImage = Properties.Resources.butt_background;
+            AddEditDoc_Button.BackgroundImageLayout = ImageLayout.Stretch;
+            AddEditDoc_Button.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 238);
+            AddEditDoc_Button.Image = Properties.Resources.top_input_butt;
+            AddEditDoc_Button.ImageScaling = ToolStripItemImageScaling.None;
+            AddEditDoc_Button.ImageTransparentColor = Color.Magenta;
+            AddEditDoc_Button.Name = "AddEditDoc_Button";
+            AddEditDoc_Button.Size = new Size(140, 51);
+            AddEditDoc_Button.Text = "Add | Edit document F2";
+            AddEditDoc_Button.TextImageRelation = TextImageRelation.ImageAboveText;
+            AddEditDoc_Button.Click += AddEditDoc_Button_Click;
+            // 
+            // toolStripSeparator5
+            // 
+            toolStripSeparator5.Name = "toolStripSeparator5";
+            toolStripSeparator5.Size = new Size(6, 54);
+            // 
+            // Refresh_Button
+            // 
+            Refresh_Button.BackgroundImage = Properties.Resources.butt_background;
+            Refresh_Button.BackgroundImageLayout = ImageLayout.Stretch;
+            Refresh_Button.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 238);
+            Refresh_Button.Image = Properties.Resources.cycle_11044416_1_;
+            Refresh_Button.ImageScaling = ToolStripItemImageScaling.None;
+            Refresh_Button.ImageTransparentColor = Color.Magenta;
+            Refresh_Button.Name = "Refresh_Button";
+            Refresh_Button.Size = new Size(71, 51);
+            Refresh_Button.Text = "Refresh F5";
+            Refresh_Button.TextDirection = ToolStripTextDirection.Horizontal;
+            Refresh_Button.TextImageRelation = TextImageRelation.ImageAboveText;
+            Refresh_Button.ToolTipText = "Refresh F5";
+            Refresh_Button.Click += Refresh_Button_Click;
+            // 
+            // toolStripSeparator2
+            // 
+            toolStripSeparator2.Name = "toolStripSeparator2";
+            toolStripSeparator2.Size = new Size(6, 54);
             // 
             // Bottom_toolStrip
             // 
@@ -244,8 +268,8 @@
             dataGridView1.AllowUserToAddRows = false;
             dataGridView1.AllowUserToDeleteRows = false;
             dataGridView1.AllowUserToOrderColumns = true;
-            dataGridViewCellStyle3.BackColor = Color.DeepSkyBlue;
-            dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle5.BackColor = Color.DeepSkyBlue;
+            dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
             dataGridView1.AutoGenerateColumns = false;
             dataGridView1.BackgroundColor = Color.SkyBlue;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -255,9 +279,9 @@
             dataGridView1.Name = "dataGridView1";
             dataGridView1.ReadOnly = true;
             dataGridView1.RowHeadersWidth = 25;
-            dataGridViewCellStyle4.BackColor = Color.FromArgb(255, 255, 192);
-            dataGridViewCellStyle4.ForeColor = Color.Black;
-            dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle6.BackColor = Color.FromArgb(255, 255, 192);
+            dataGridViewCellStyle6.ForeColor = Color.Black;
+            dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle6;
             dataGridView1.Size = new Size(1002, 479);
             dataGridView1.TabIndex = 2;
             // 
@@ -440,6 +464,24 @@
             Search_panel2.Visible = false;
             Search_panel2.Paint += Search_panel2_Paint;
             // 
+            // SearchDateTo_dateTimePicker
+            // 
+            SearchDateTo_dateTimePicker.Format = DateTimePickerFormat.Short;
+            SearchDateTo_dateTimePicker.Location = new Point(95, 153);
+            SearchDateTo_dateTimePicker.Name = "SearchDateTo_dateTimePicker";
+            SearchDateTo_dateTimePicker.Size = new Size(145, 23);
+            SearchDateTo_dateTimePicker.TabIndex = 18;
+            // 
+            // Search_RegDateTo_label
+            // 
+            Search_RegDateTo_label.AutoSize = true;
+            Search_RegDateTo_label.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 238);
+            Search_RegDateTo_label.Location = new Point(71, 159);
+            Search_RegDateTo_label.Name = "Search_RegDateTo_label";
+            Search_RegDateTo_label.Size = new Size(23, 15);
+            Search_RegDateTo_label.TabIndex = 17;
+            Search_RegDateTo_label.Text = "To:";
+            // 
             // SearchDateFrom_dateTimePicker
             // 
             SearchDateFrom_dateTimePicker.Format = DateTimePickerFormat.Short;
@@ -553,24 +595,6 @@
             Search_panel1.TabIndex = 4;
             Search_panel1.Visible = false;
             // 
-            // SearchDateTo_dateTimePicker
-            // 
-            SearchDateTo_dateTimePicker.Format = DateTimePickerFormat.Short;
-            SearchDateTo_dateTimePicker.Location = new Point(95, 153);
-            SearchDateTo_dateTimePicker.Name = "SearchDateTo_dateTimePicker";
-            SearchDateTo_dateTimePicker.Size = new Size(145, 23);
-            SearchDateTo_dateTimePicker.TabIndex = 18;
-            // 
-            // Search_RegDateTo_label
-            // 
-            Search_RegDateTo_label.AutoSize = true;
-            Search_RegDateTo_label.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 238);
-            Search_RegDateTo_label.Location = new Point(71, 159);
-            Search_RegDateTo_label.Name = "Search_RegDateTo_label";
-            Search_RegDateTo_label.Size = new Size(23, 15);
-            Search_RegDateTo_label.TabIndex = 17;
-            Search_RegDateTo_label.Text = "To:";
-            // 
             // Incoming_Letters_Form
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -655,5 +679,7 @@
         private DateTimePicker SearchDateFrom_dateTimePicker;
         private DateTimePicker SearchDateTo_dateTimePicker;
         private Label Search_RegDateTo_label;
+        private ToolStripSeparator toolStripSeparator5;
+        private ToolStripButton Refresh_Button;
     }
 }

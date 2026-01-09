@@ -12,17 +12,36 @@ namespace Secretariat_Soft.Secretariat_Forms
 {
     public partial class IncomingLetters_DataEntry_Form : Form
     {
+        private int currentID;
+        bool currentID_set;
+
         public IncomingLetters_DataEntry_Form()
         {
             InitializeComponent();
+            currentID_set = false;
+        }
+
+        public IncomingLetters_DataEntry_Form(int currentID)
+        {
+            InitializeComponent();
+            this.currentID = currentID;
+            currentID_set = true;
         }
 
         private void IncomingLetters_DataEntry_Form_Load(object sender, EventArgs e)
         {
+            this.AutoValidate = AutoValidate.EnableAllowFocusChange;
             enable_add_edit_del_buttons();
 
             //--------------------------
-            this.incoming_LettersTableAdapter1.FillBy_ID_desc(this.letters1.Incoming_Letters);
+            if (!currentID_set)
+            {
+                this.incoming_LettersTableAdapter1.FillBy_ID_desc(this.letters1.Incoming_Letters);
+            }
+            else
+            {
+                this.incoming_LettersTableAdapter1.FillBy_ID(this.letters1.Incoming_Letters,currentID);
+            }
             //--------------------------
 
         }
@@ -72,6 +91,19 @@ namespace Secretariat_Soft.Secretariat_Forms
 
         }
 
+        bool ValidateDate(MaskedTextBox sender)
+        {
+            if(sender.Text!= "____-__-__")
+            {
+                if(!(DateTime.TryParse(sender.Text, out DateTime date)))
+                {
+                    MessageBox.Show("Error!\n" + sender.Name + " contains invalid data!");
+                    return false;
+                }
+            }
+            return true;
+        }
+
         private void AddNew_Button_Click(object sender, EventArgs e)
         {
             disable_add_edit_del_buttons();
@@ -108,6 +140,13 @@ namespace Secretariat_Soft.Secretariat_Forms
 
         private void Save_Button_Click(object sender, EventArgs e)
         {
+            if(!(ValidateDate(RegDate_maskedTextBox)&&
+               ValidateDate(DateReceived_maskedTextBox)&&
+               ValidateDate(ResponseDeadline_maskedTextBox)))
+            {
+                return;
+            }
+                
             try
             {
                 //----------

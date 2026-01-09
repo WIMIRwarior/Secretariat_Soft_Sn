@@ -405,12 +405,14 @@
             // 
             // ResponseDeadline_maskedTextBox
             // 
+            ResponseDeadline_maskedTextBox.CutCopyMaskFormat = MaskFormat.IncludePromptAndLiterals;
             ResponseDeadline_maskedTextBox.DataBindings.Add(new Binding("Text", bindingSource1, "Response_Deadline", true));
             ResponseDeadline_maskedTextBox.Location = new Point(154, 359);
             ResponseDeadline_maskedTextBox.Mask = "0000-00-00";
             ResponseDeadline_maskedTextBox.Name = "ResponseDeadline_maskedTextBox";
             ResponseDeadline_maskedTextBox.Size = new Size(229, 23);
             ResponseDeadline_maskedTextBox.TabIndex = 29;
+            ResponseDeadline_maskedTextBox.TextMaskFormat = MaskFormat.IncludePromptAndLiterals;
             // 
             // RelatedToDoc_TextBox
             // 
@@ -432,6 +434,7 @@
             // 
             // Priority_comboBox
             // 
+            Priority_comboBox.DataBindings.Add(new Binding("Text", bindingSource1, "Priority", true));
             Priority_comboBox.FormattingEnabled = true;
             Priority_comboBox.Items.AddRange(new object[] { "Low", "Normal", "High" });
             Priority_comboBox.Location = new Point(154, 301);
@@ -482,12 +485,14 @@
             // 
             // DateReceived_maskedTextBox
             // 
+            DateReceived_maskedTextBox.CutCopyMaskFormat = MaskFormat.IncludePromptAndLiterals;
             DateReceived_maskedTextBox.DataBindings.Add(new Binding("Text", bindingSource1, "Date_Received", true));
             DateReceived_maskedTextBox.Location = new Point(154, 127);
             DateReceived_maskedTextBox.Mask = "0000-00-00";
             DateReceived_maskedTextBox.Name = "DateReceived_maskedTextBox";
             DateReceived_maskedTextBox.Size = new Size(229, 23);
             DateReceived_maskedTextBox.TabIndex = 19;
+            DateReceived_maskedTextBox.TextMaskFormat = MaskFormat.IncludePromptAndLiterals;
             // 
             // LetterType_TextBox
             // 
@@ -499,12 +504,14 @@
             // 
             // RegDate_maskedTextBox
             // 
+            RegDate_maskedTextBox.CutCopyMaskFormat = MaskFormat.IncludePromptAndLiterals;
             RegDate_maskedTextBox.DataBindings.Add(new Binding("Text", bindingSource1, "Reg_Date", true));
             RegDate_maskedTextBox.Location = new Point(154, 40);
             RegDate_maskedTextBox.Mask = "0000-00-00";
             RegDate_maskedTextBox.Name = "RegDate_maskedTextBox";
             RegDate_maskedTextBox.Size = new Size(229, 23);
             RegDate_maskedTextBox.TabIndex = 17;
+            RegDate_maskedTextBox.TextMaskFormat = MaskFormat.IncludePromptAndLiterals;
             // 
             // LetterNum_TextBox
             // 
@@ -676,6 +683,7 @@
             MinimizeBox = false;
             Name = "IncomingLetters_DataEntry_Form";
             ShowIcon = false;
+            StartPosition = FormStartPosition.CenterParent;
             Text = "Data Entry: Icoming Letters";
             Load += IncomingLetters_DataEntry_Form_Load;
             Top_toolStrip.ResumeLayout(false);
