@@ -177,5 +177,9 @@ namespace Secretariat_Soft.Secretariat_Forms
             this.incoming_LettersTableAdapter1.Fill(letters1.Incoming_Letters);
             update_position_text();
         }
+
+        private void Incoming_Letters_Form_FormClosing(object sender, FormClosingEventArgs e)
+        {
+        }
     }
 }

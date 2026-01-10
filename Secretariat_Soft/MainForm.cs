@@ -111,5 +111,26 @@ namespace Secretariat_Soft
         {
             Main_TreeView.ExpandAll();
         }
+
+        public void IFL_Closed(object sender, EventArgs e)
+        {
+            this.Main_TreeView.Enabled = true;
+        }
+
+        private void Main_TreeView_DoubleClick(object sender, EventArgs e)
+        {
+            if(this.Main_TreeView.SelectedNode!=null)
+            {
+                if(Main_TreeView.SelectedNode.Text=="Incoming Letters")
+                {
+                    Secretariat_Forms.Incoming_Letters_Form ILF = new Secretariat_Forms.Incoming_Letters_Form();
+                    ILF.MdiParent = this;
+                    this.Main_TreeView.Enabled = false;
+                    ILF.FormClosed += IFL_Closed;
+                    ILF.Show();
+                }
+                
+            }
+        }
     }
 }

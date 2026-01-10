@@ -406,6 +406,7 @@
             Main_TreeView.SelectedImageIndex = 0;
             Main_TreeView.Size = new Size(297, 385);
             Main_TreeView.TabIndex = 0;
+            Main_TreeView.DoubleClick += Main_TreeView_DoubleClick;
             // 
             // TreeView_imageList
             // 

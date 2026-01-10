@@ -406,7 +406,7 @@
             // ResponseDeadline_maskedTextBox
             // 
             ResponseDeadline_maskedTextBox.CutCopyMaskFormat = MaskFormat.IncludePromptAndLiterals;
-            ResponseDeadline_maskedTextBox.DataBindings.Add(new Binding("Text", bindingSource1, "Response_Deadline", true));
+            ResponseDeadline_maskedTextBox.DataBindings.Add(new Binding("Text", bindingSource1, "Response_Deadline", true, DataSourceUpdateMode.OnValidation, "____-__-__"));
             ResponseDeadline_maskedTextBox.Location = new Point(154, 359);
             ResponseDeadline_maskedTextBox.Mask = "0000-00-00";
             ResponseDeadline_maskedTextBox.Name = "ResponseDeadline_maskedTextBox";
@@ -486,7 +486,7 @@
             // DateReceived_maskedTextBox
             // 
             DateReceived_maskedTextBox.CutCopyMaskFormat = MaskFormat.IncludePromptAndLiterals;
-            DateReceived_maskedTextBox.DataBindings.Add(new Binding("Text", bindingSource1, "Date_Received", true));
+            DateReceived_maskedTextBox.DataBindings.Add(new Binding("Text", bindingSource1, "Date_Received", true, DataSourceUpdateMode.OnValidation, "____-__-__"));
             DateReceived_maskedTextBox.Location = new Point(154, 127);
             DateReceived_maskedTextBox.Mask = "0000-00-00";
             DateReceived_maskedTextBox.Name = "DateReceived_maskedTextBox";
@@ -505,7 +505,7 @@
             // RegDate_maskedTextBox
             // 
             RegDate_maskedTextBox.CutCopyMaskFormat = MaskFormat.IncludePromptAndLiterals;
-            RegDate_maskedTextBox.DataBindings.Add(new Binding("Text", bindingSource1, "Reg_Date", true));
+            RegDate_maskedTextBox.DataBindings.Add(new Binding("Text", bindingSource1, "Reg_Date", true, DataSourceUpdateMode.OnValidation, "____-__-__"));
             RegDate_maskedTextBox.Location = new Point(154, 40);
             RegDate_maskedTextBox.Mask = "0000-00-00";
             RegDate_maskedTextBox.Name = "RegDate_maskedTextBox";

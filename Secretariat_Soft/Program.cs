@@ -26,7 +26,7 @@ namespace Secretariat_Soft
             //------------------------------------------------------
 
             ApplicationConfiguration.Initialize();
-            Application.Run(new Secretariat_Forms.Incoming_Letters_Form());
+            Application.Run(new MainForm());
         }
     }
 }
